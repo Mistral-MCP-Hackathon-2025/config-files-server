@@ -1,0 +1,15 @@
+services:
+  config-files-server:
+    image: ghcr.io/mistral-mcp-hackathon-2025/config-files-server:latest
+    pull_policy: always
+    container_name: config-files-server
+    ports:
+      - "8000:8000"
+    environment:
+      - API_KEY=${API_KEY:-change-me}
+    volumes:
+      - configs:/app/configs
+    restart: unless-stopped
+
+volumes:
+  configs:
