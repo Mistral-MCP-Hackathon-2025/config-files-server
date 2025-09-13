@@ -1,0 +1,5 @@
+# Example configuration file
+service:
+  name: example
+  url: https://api.example.com
+  timeout: 10
