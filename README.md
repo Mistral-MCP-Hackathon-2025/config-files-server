@@ -45,6 +45,29 @@ uvicorn app.main:app --reload
 curl -H "X-API-Key: change-me" http://localhost:8000/v1/example.yaml
 ```
 
+## Docker
+
+Build the image (from the repo root):
+
+```
+docker build -t config-files-server .
+```
+
+Run the container, passing the API key and mounting local configs:
+
+```
+docker run --rm -p 8000:8000 \
+  -e API_KEY=change-me \
+  -v "$(pwd)/configs:/app/configs:ro" \
+  config-files-server
+```
+
+Then fetch a file as before:
+
+```
+curl -H "X-API-Key: change-me" http://localhost:8000/v1/example.yaml
+```
+
 ## Project structure
 
 - `app/` – application code (modularized)
