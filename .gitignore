@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv/
+venv/
+
+# Packaging
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Ruff cache
+.ruff_cache/
